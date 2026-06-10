@@ -356,7 +356,10 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
 /* MOBILE */
 @media(max-width:768px){
+  body{overflow-x:hidden}
+  
   /* Navigation */
+  nav{z-index:1000}
   nav.scrolled{padding:12px 0}
   .nav-wrap{padding:0 20px}
   .nav-logo{font-size:13px}
@@ -365,7 +368,7 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .nav-cta{padding:8px 16px;font-size:12px !important}
 
   /* Hero section */
-  .hero{padding:100px 0 60px;min-height:auto}
+  .hero{padding:100px 0 60px;min-height:auto;overflow:hidden}
   .hero::before{width:400px;height:400px;right:-150px}
   .hero::after{width:250px;height:250px;left:-80px;bottom:-80px}
   .hero-wrap{padding:0 20px;gap:40px;grid-template-columns:1fr}
@@ -387,7 +390,7 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .badge-cicd{top:15%;left:-60px}
 
   /* Stats */
-  .stats-section{padding:24px 0}
+  .stats-section{padding:24px 0;overflow:hidden}
   .stats-wrap{flex-direction:column;padding:0 20px;gap:16px;justify-content:center}
   .stat{text-align:center}
   .stat-num{font-size:28px}
@@ -395,14 +398,14 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .stat-sep{display:none}
 
   /* Section */
-  .section{padding:60px 0}
-  .section-wrap{padding:0 20px}
+  .section{padding:60px 0;overflow:hidden}
+  .section-wrap{padding:0 20px;width:100%}
   .sec-h{font-size:28px;letter-spacing:-0.8px;margin-bottom:32px}
   .sec-tag{font-size:10px;margin-bottom:8px}
 
   /* Skills */
   .skills-wrap{grid-template-columns:1fr;gap:12px}
-  .skill-box{padding:16px;border-radius:10px}
+  .skill-box{padding:16px;border-radius:10px;overflow:hidden}
   .sk-icon{font-size:20px;margin-bottom:8px}
   .sk-cat{font-size:10px;margin-bottom:8px}
   .sk-tags{gap:5px}
@@ -410,45 +413,49 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 
   /* Projects */
   .proj-list{gap:16px}
-  .proj-box{padding:20px;border-radius:12px;grid-template-columns:1fr}
+  .proj-box{padding:20px;border-radius:12px;grid-template-columns:1fr;overflow:hidden}
   .proj-top{flex-direction:column;gap:10px;margin-bottom:10px}
   .proj-num{font-size:10px;padding:2px 8px}
-  .proj-title{font-size:16px;margin-bottom:3px;line-height:1.25}
+  .proj-title{font-size:16px;margin-bottom:3px;line-height:1.25;word-break:break-word}
   .proj-link{font-size:10px;padding:7px 12px}
   .proj-bullets{margin-bottom:12px}
-  .proj-bullets li{font-size:13px;line-height:1.6;padding:2px 0 2px 16px}
+  .proj-bullets li{font-size:13px;line-height:1.6;padding:2px 0 2px 16px;word-break:break-word}
   .proj-bullets li::before{font-size:10px;top:4px}
   .proj-stack{gap:5px}
   .stk{font-size:10px;padding:3px 8px}
 
   /* Education */
-  .edu-box{flex-direction:column;gap:16px;padding:24px;text-align:center;align-items:center}
-  .edu-icon-wrap{width:56px;height:56px;font-size:24px}
-  .edu-degree{font-size:16px;margin-bottom:4px}
+  .edu-box{flex-direction:column;gap:16px;padding:24px;text-align:center;align-items:center;overflow:hidden}
+  .edu-icon-wrap{width:56px;height:56px;font-size:24px;flex-shrink:0}
+  .edu-degree{font-size:16px;margin-bottom:4px;word-break:break-word}
   .edu-uni{font-size:13px;margin-bottom:2px}
   .edu-loc{font-size:12px}
   .edu-year-pill{margin-left:0;margin-top:12px;font-size:12px;padding:8px 16px}
 
   /* Contact */
-  .contact-box{padding:36px 20px;border-radius:16px}
-  .contact-box h2{font-size:28px;margin-bottom:8px}
-  .contact-box p{font-size:14px;margin-bottom:28px}
-  .clinks{flex-direction:column;gap:10px}
-  .clink{font-size:13px;padding:11px 16px;width:100%}
+  #contact{overflow:hidden}
+  .contact-box{padding:36px 20px;border-radius:16px;overflow:hidden;position:relative;z-index:10}
+  .contact-box::before{position:absolute;pointer-events:none}
+  .contact-box h2{font-size:28px;margin-bottom:8px;position:relative;z-index:2}
+  .contact-box p{font-size:14px;margin-bottom:28px;position:relative;z-index:2}
+  .clinks{position:relative;z-index:2;flex-direction:column}
+  .clink{font-size:13px;padding:11px 16px;word-break:break-word}
   .clink svg{width:14px;height:14px}
 
   /* Footer */
-  footer{padding:24px 20px}
-  .ft{font-size:12px}
+  footer{overflow:hidden;padding:24px 20px}
+  .ft{font-size:12px;word-break:break-word}
 }
 
 /* EXTRA SMALL SCREENS */
 @media(max-width:480px){
+  body{overflow-x:hidden}
+  
   .nav-wrap{padding:0 16px}
   .nav-logo{font-size:12px}
   .nav-links{gap:12px}
 
-  .hero{padding:80px 0 40px}
+  .hero{padding:80px 0 40px;overflow:hidden}
   .hero::before{width:300px;height:300px;right:-120px;top:30%}
   .hero::after{display:none}
   .hero-wrap{padding:0 16px;gap:20px}
@@ -460,38 +467,44 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .btn-dark,.btn-border,.btn-li{width:100%;justify-content:center;padding:10px 16px;font-size:12px}
 
   .photo-frame,.photo-circle{width:180px;height:180px}
-  .photo-ring-outer{inset:-10px}
-  .badge{font-size:10px;padding:6px 10px}
-  .badge-aws{top:5px;right:-10px}
-  .badge-docker{bottom:15px;left:-20px}
-  .badge-linux{bottom:5px;right:0}
-  .badge-cicd{top:20%;left:-50px;font-size:9px}
+  .photo-ring-outer{inset:-10px;right:-10px}
+  .badge{font-size:10px;padding:6px 10px;position:fixed;z-index:5}
+  .badge-aws{top:5px;right:-10px;position:absolute}
+  .badge-docker{bottom:15px;left:-20px;position:absolute}
+  .badge-linux{bottom:5px;right:0;position:absolute}
+  .badge-cicd{top:20%;left:-50px;font-size:9px;position:absolute}
 
-  .section{padding:48px 0}
-  .section-wrap{padding:0 16px}
+  .section{padding:48px 0;overflow:hidden}
+  .section-wrap{padding:0 16px;width:100%}
   .sec-h{font-size:24px;margin-bottom:24px}
   .sec-tag{font-size:9px}
 
-  .skills-wrap{grid-template-columns:1fr}
-  .skill-box{padding:14px}
+  .skills-wrap{grid-template-columns:1fr;gap:10px}
+  .skill-box{padding:14px;overflow:hidden}
   .sk-icon{font-size:18px}
   .sk-cat{font-size:9px}
   .sk-tag{font-size:9px;padding:2px 6px}
 
-  .proj-box{padding:16px}
-  .proj-title{font-size:14px}
-  .proj-bullets li{font-size:12px;line-height:1.5}
+  .proj-box{padding:16px;overflow:hidden}
+  .proj-title{font-size:14px;word-break:break-word}
+  .proj-bullets li{font-size:12px;line-height:1.5;word-break:break-word}
 
-  .edu-box{padding:20px}
-  .edu-icon-wrap{width:48px;height:48px;font-size:20px}
-  .edu-degree{font-size:14px}
+  .edu-box{padding:20px;overflow:hidden}
+  .edu-icon-wrap{width:48px;height:48px;font-size:20px;flex-shrink:0}
+  .edu-degree{font-size:14px;word-break:break-word}
   .edu-uni{font-size:12px}
   .edu-loc{font-size:11px}
 
-  .contact-box{padding:28px 16px}
-  .contact-box h2{font-size:24px}
-  .contact-box p{font-size:13px;margin-bottom:20px}
-  .clink{font-size:12px;padding:10px 14px}
+  #contact{overflow:hidden}
+  .contact-box{padding:28px 16px;border-radius:16px;overflow:hidden;position:relative;z-index:10}
+  .contact-box::before{width:300px;height:300px}
+  .contact-box h2{font-size:24px;position:relative;z-index:2}
+  .contact-box p{font-size:13px;margin-bottom:20px;position:relative;z-index:2}
+  .clinks{position:relative;z-index:2}
+  .clink{font-size:12px;padding:10px 14px;word-break:break-word}
+  
+  footer{overflow:hidden;padding:24px 16px}
+  .ft{font-size:12px;word-break:break-word}
 }
 </style>
 </head>
