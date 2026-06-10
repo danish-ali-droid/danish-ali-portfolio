@@ -15,6 +15,6 @@ jobs:
       - name: build the artifacts
         run: vercel build --prod --token=${{secrets.VERSEL_TOKEN}}
       - name: deploy the artifact
-        run: vercel --prebuild --prod --token=${{secrets.VERSEL_TOKEN}}
+        run: vercel --prebuilt --prod --token=${{secrets.VERSEL_TOKEN}}
         
 
