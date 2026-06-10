@@ -34,7 +34,7 @@ img{display:block}
 body::after{
   content:'';position:fixed;inset:0;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:9999;opacity:0.4;
+  pointer-events:none;z-index:50;opacity:0.4;
 }
 
 /* NAV */
@@ -349,13 +349,16 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
 .ft em{color:var(--green);font-style:normal}
 
 /* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;position:relative;z-index:1}
 .reveal.on{opacity:1;transform:translateY(0)}
 
 @keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
 
 /* MOBILE */
 @media(max-width:768px){
+  /* Disable noise overlay on mobile to prevent glitches */
+  body::after{display:none !important}
+  
   body{overflow-x:hidden}
   
   /* Navigation */
@@ -433,13 +436,13 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .edu-year-pill{margin-left:0;margin-top:12px;font-size:12px;padding:8px 16px}
 
   /* Contact */
-  #contact{overflow:hidden}
-  .contact-box{padding:36px 20px;border-radius:16px;overflow:hidden;position:relative;z-index:10}
-  .contact-box::before{position:absolute;pointer-events:none}
-  .contact-box h2{font-size:28px;margin-bottom:8px;position:relative;z-index:2}
-  .contact-box p{font-size:14px;margin-bottom:28px;position:relative;z-index:2}
-  .clinks{position:relative;z-index:2;flex-direction:column}
-  .clink{font-size:13px;padding:11px 16px;word-break:break-word}
+  #contact{overflow:hidden;position:relative;z-index:1}
+  .contact-box{padding:36px 20px;border-radius:16px;overflow:hidden;position:relative;z-index:10;width:100%;max-width:100%}
+  .contact-box::before{position:absolute;pointer-events:none;z-index:1}
+  .contact-box h2{font-size:28px;margin-bottom:8px;position:relative;z-index:20}
+  .contact-box p{font-size:14px;margin-bottom:28px;position:relative;z-index:20}
+  .clinks{position:relative;z-index:20;flex-direction:column}
+  .clink{font-size:13px;padding:11px 16px;word-break:break-word;position:relative;z-index:20}
   .clink svg{width:14px;height:14px}
 
   /* Footer */
@@ -495,13 +498,13 @@ footer{padding:32px 0;border-top:1px solid var(--border);text-align:center}
   .edu-uni{font-size:12px}
   .edu-loc{font-size:11px}
 
-  #contact{overflow:hidden}
-  .contact-box{padding:28px 16px;border-radius:16px;overflow:hidden;position:relative;z-index:10}
-  .contact-box::before{width:300px;height:300px}
-  .contact-box h2{font-size:24px;position:relative;z-index:2}
-  .contact-box p{font-size:13px;margin-bottom:20px;position:relative;z-index:2}
-  .clinks{position:relative;z-index:2}
-  .clink{font-size:12px;padding:10px 14px;word-break:break-word}
+  #contact{overflow:hidden;position:relative;z-index:1}
+  .contact-box{padding:28px 16px;border-radius:16px;overflow:hidden;position:relative;z-index:10;width:100%;max-width:100%}
+  .contact-box::before{width:300px;height:300px;position:absolute;pointer-events:none;z-index:1}
+  .contact-box h2{font-size:24px;position:relative;z-index:20}
+  .contact-box p{font-size:13px;margin-bottom:20px;position:relative;z-index:20}
+  .clinks{position:relative;z-index:20}
+  .clink{font-size:12px;padding:10px 14px;word-break:break-word;position:relative;z-index:20}
   
   footer{overflow:hidden;padding:24px 16px}
   .ft{font-size:12px;word-break:break-word}
