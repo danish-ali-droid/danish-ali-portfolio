@@ -2,7 +2,7 @@
 
 > A production-ready, fully responsive portfolio showcasing DevOps engineering capabilities, automated CI/CD workflows, and cloud infrastructure integration — built to the standards of modern web engineering.
 
-[![Deploy](https://github.com/danish-ali-droid/danish-ali-droid.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/danish-ali-droid/danish-ali-droid.github.io/actions/workflows/deploy.yaml)
+[![Deploy](https://github.com/danish-ali-droid/my-portfolio/actions/workflows/deploy.yaml/badge.svg)](https://github.com/danish-ali-droid/my-portfolio/actions/workflows/deploy.yaml)
 ![Hosted on GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222?logo=github&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -58,22 +58,7 @@ To run this project locally, you only need a browser — no build tools or packa
 - Git installed on your machine
 - Any modern web browser (Chrome, Firefox, Edge, Safari)
 
-### Clone & Run
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/danish-ali-droid/danish-ali-droid.github.io.git
-
-# 2. Navigate into the project directory
-cd danish-ali-droid.github.io
-
-# 3. Open the site in your browser
-#    On Linux/macOS:
-open index.html
-#    Or simply drag index.html into any browser window
-```
-
-> No `npm install`. No build step. Just open `index.html` and it runs.
 
 ---
 
