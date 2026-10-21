@@ -169,14 +169,14 @@ const S=[
 ['Security & Networking','Secrets Manager · Security Groups · Bastion Host · SSL/TLS']
 ];
 const P=[
-['Personal Portfolio','GitHub Actions · Vercel · HTML/CSS/JS','Responsive portfolio with an automated CI/CD pipeline deploying on every push.','danish-ali-portfolio'],
+['Portfolio','GitHub Actions · Vercel · HTML/CSS/JS','Responsive portfolio with an automated CI/CD pipeline deploying on every push.','danish-ali-portfolio'],
 ['ChronoLux Watch Store','Terraform · AWS EKS · Aurora · GitHub Actions','Production e-commerce on EKS Fargate with GitOps pipelines and secrets in Secrets Manager.','watch-store'],
-['Three-Tier Gym Management','AWS ALB/NLB · Auto Scaling · ECR · PostgreSQL','Multi-AZ three-tier system with separate CI/CD pipelines per tier.','multi-tier-gymms-deployment'],
+['Gym Management','AWS ALB/NLB · Auto Scaling · ECR · PostgreSQL','Multi-AZ three-tier system with separate CI/CD pipelines per tier.','multi-tier-gymms-deployment'],
 ['Frontend Deployment Pipeline','Terraform · CodeDeploy · S3 · ALB · React/Vite','Terraform-built VPC and EC2 with rollback-safe CodeDeploy releases.','cloud-deploy-app'],
-['AWS Highly Available Architecture','VPC · ALB · Auto Scaling · Bastion · NAT','Fault-tolerant web tier across two AZs with private subnets and IAM roles.','Aws'],
+['Server Monitor','VPC · ALB · Auto Scaling · Bastion · NAT','Fault-tolerant web tier across two AZs with private subnets and IAM roles.','Aws'],
 ['CI/CD Pipeline Automation','GitHub Actions · Docker · Flask · Node.js · Nginx','Automated build, test and delivery workflows for three application types.','ci-cd-Pipeline'],
 ['Multi-Container Application','Docker Compose · Nginx · Node.js · MariaDB','Reverse-proxied containerized stack with persistent database storage.','Docker-'],
-['Task Manager Three-Tier App','AWS Amplify · RDS · Cloudflare Tunnel · Docker','React on Amplify, PHP API on a local VM and MariaDB on RDS, bridged securely over HTTPS.','amplify-vm-rds-deployment']
+['Task Manager','AWS Amplify · RDS · Cloudflare Tunnel · Docker','React on Amplify, PHP API on a local VM and MariaDB on RDS, bridged securely over HTTPS.','amplify-vm-rds-deployment']
 ];
 sg.innerHTML=S.map(s=>`<div class="box"><h3>${s[0]}</h3><div class="chips">${s[1].split(' · ').map(c=>`<span class="chip">${c}</span>`).join('')}</div></div>`).join('');
 pg.innerHTML=P.map((p,i)=>`<a class="box" href="${G}${p[3]}" target="_blank" rel="noopener"><span class="n">PROJECT / ${String(i+1).padStart(2,'0')}</span><h3>${p[0]}</h3><span class="st">${p[1]}</span><p>${p[2]}</p></a>`).join('');
